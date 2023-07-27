@@ -44,6 +44,8 @@ void quick_sort(int *array, size_t size)
 
 	print_array(array, size);
 
-	quick_sort(array, i);
-	quick_sort(array + i + 1, size - i - 1);
+	if (i > 0)
+		quick_sort(array, i);
+	if (i + 1 < size)
+		quick_sort(array + i + 1, size - i - 1);
 }
